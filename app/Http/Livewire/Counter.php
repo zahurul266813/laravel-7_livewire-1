@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Livewire;
+
+use Livewire\Component;
+use Illuminate\Http\Request;
+
+class Counter extends Component
+{
+    public $counter;
+    public $step;
+
+    protected $listeners = 
+    [
+        'incrementEmit'=>'increment',
+        'decrementEmit'=>'decrement'
+    ];
+   
+    public function mount()
+    {
+        $this->counter = 0;
+        $this->step = 1;
+    }
+
+
+    public function increment($step)
+    {
+        $this->counter+=$step;
+    }
+
+    public function decrement($step)
+    {
+        $this->counter-=$step;
+    }
+    public function updatingStep($val)
+    {
+        $this->emit('refreshButton',$val);
+    }
+
+
+
+    // public function increment()
+    // {
+    //     $this->emit('incrementEmit');
+    // }
+    // public function decrement()
+    // {
+    //     $this->emit('decrementEmit');
+    // }
+ 
+
+}
