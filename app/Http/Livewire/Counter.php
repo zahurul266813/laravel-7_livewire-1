@@ -9,9 +9,13 @@ class Counter extends Component
 {
     public $counter;
     public $step;
+    
+
 
     protected $listeners = 
     [
+        'incrementButtonEmit'=>'increment',
+        'decrementButtonEmit'=>'decrement',
         'incrementEmit'=>'increment',
         'decrementEmit'=>'decrement'
     ];
@@ -20,6 +24,7 @@ class Counter extends Component
     {
         $this->counter = 0;
         $this->step = 1;
+
     }
 
 
@@ -32,7 +37,7 @@ class Counter extends Component
     {
         $this->counter-=$step;
     }
-    public function updatingStep($val)
+    public function updatedStep($val)
     {
         $this->emit('refreshButton',$val);
     }

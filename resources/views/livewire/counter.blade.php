@@ -5,16 +5,21 @@
 
    <input type="text" wire:model.lazy="step">
    <br>
+   <input type="text" wire:model.lazy="stepButton">
+   <br>
    <div style="display: flex; justify-content: center;">
-      @livewire('button',['title'=>'increment','action'=>'incrementEmit','step'=>$step])
-      @livewire('button',['title'=>'decrement','action'=>'decrementEmit','step'=>$step])
+      @livewire('button',['title'=>'increment','action'=>'incrementButtonEmit','step'=>$step])
+      @livewire('button',['title'=>'decrement','action'=>'decrementButtonEmit','step'=>$step])
       
 
       
    </div>
 
 
-   <button wire:click="$emit('incrementEmit',{{$step}})">+</button> || <button wire:click="$emit('decrementEmit',{{$step}})">-</button>
+   <p><button wire:click="$emitTo('hello-world','incrementEmit',{{$step}})">+</button> || <button wire:click="$emitTo('hello-world','decrementEmit',{{$step}})">-</button></p>
+   
+   <p><button wire:click="$emit('incrementEmit',{{$step}})">Plus</button> || <button wire:click="$emit('decrementEmit',{{$step}})">Minus</button></p>
+   
 
 
  

@@ -1,4 +1,4 @@
 <div >
-    <button  wire:click="$emitUp('{{$action}}',{{$step}})">{{$title}}</button>
+    <button  wire:click="$emitTo('counter','{{$action}}',{{$step}})">{{$title}}</button>
 
 </div>
