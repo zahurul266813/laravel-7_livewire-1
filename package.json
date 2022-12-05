@@ -2,8 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        
-        "build": "webpack --config webpack.config.js",
+        "build": "vite build",
         "watch": "webpack --watch --progress"
     },
     "devDependencies": {
